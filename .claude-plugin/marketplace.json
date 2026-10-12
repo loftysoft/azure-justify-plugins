@@ -1,0 +1,17 @@
+{
+  "name": "azure-justify-plugins",
+  "owner": {
+    "name": "Loftysoft"
+  },
+  "metadata": {
+    "description": "Plugins that help decide whether an Azure workload's architecture, resilience and cost are justified.",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "collect",
+      "source": "./collect",
+      "description": "Placeholder: will list the Azure resources in a Service Group and write a report."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+# Working data collected from Azure, never committed.
+/local/
+
+# Credentials and environment files.
+*.env
+.env
+.env.*
+*.publishsettings
+*.pfx
+*.p12
+*.pem
+*.key
+azureauth.json
+
+# Editor and operating system state.
+.idea/
+.DS_Store
+Thumbs.db
