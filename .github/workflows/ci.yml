@@ -1,0 +1,23 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+  merge_group:
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install test and lint modules
+        shell: pwsh
+        run: |
+          Install-PSResource Pester -Version '[5.7,6.0)' -Scope CurrentUser -TrustRepository -Quiet
+          Install-PSResource PSScriptAnalyzer -Version '[1.25,2.0)' -Scope CurrentUser -TrustRepository -Quiet
+      - name: Run tests and analyzer
+        shell: pwsh
+        run: ./tests/Invoke-Checks.ps1
